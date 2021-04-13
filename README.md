@@ -7,7 +7,7 @@ A package manager that installs Coordinator used in my personal projects.
 
 CHCoordinator is designed to be used with any iOS Projects based on Coordinator Pattern.
 - ✅ Coordinator
-- ✅ rOUTER
+- ✅ Router
 
 The Swift Package Manager is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
 
