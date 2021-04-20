@@ -1,6 +1,6 @@
 import Foundation
 
-public class BaseCoordinator : Coordinator {
+open class BaseCoordinator : Coordinator {
     public var childCoordinators : [Coordinator] = []
     public var isCompleted: (() -> ())?
 
