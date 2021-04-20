@@ -1,9 +1,9 @@
 import UIKit
 
-protocol Drawable {
+public protocol Drawable {
     var viewController: UIViewController? { get }
 }
 
 extension UIViewController: Drawable {
-    var viewController: UIViewController? { return self }
+    public var viewController: UIViewController? { return self }
 }

@@ -1,25 +1,25 @@
 import UIKit
 
-typealias NavigationBackClosure = (() -> ())
+public typealias NavigationBackClosure = (() -> ())
 
-protocol RouterProtocol: class {
+public protocol RouterProtocol: class {
     func push(_ drawable: Drawable, isAnimated: Bool, onNavigateBack: NavigationBackClosure?)
     func pop(_ isAnimated: Bool)
     func popToRoot(_ isAnimated: Bool)
 }
 
-class Router : NSObject, RouterProtocol {
+public class Router : NSObject, RouterProtocol {
 
     let navigationController: UINavigationController
     private var closures: [String: NavigationBackClosure] = [:]
 
-    init(navigationController: UINavigationController) {
+    public init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         super.init()
         self.navigationController.delegate = self
     }
 
-    func push(_ drawable: Drawable, isAnimated: Bool, onNavigateBack closure: NavigationBackClosure?) {
+    public func push(_ drawable: Drawable, isAnimated: Bool, onNavigateBack closure: NavigationBackClosure?) {
         guard let viewController = drawable.viewController else {
             return
         }
@@ -30,14 +30,14 @@ class Router : NSObject, RouterProtocol {
         navigationController.pushViewController(viewController, animated: isAnimated)
     }
     
-    func pop(_ isAnimated: Bool) {
+    public func pop(_ isAnimated: Bool) {
         guard let viewController = navigationController.popViewController(animated: isAnimated) else {
             return
         }
         executeClosure(viewController)
     }
     
-    func popToRoot(_ isAnimated: Bool) {
+    public func popToRoot(_ isAnimated: Bool) {
         guard let viewControllers = navigationController.popToRootViewController(animated: isAnimated) else {
             return
         }
@@ -53,7 +53,7 @@ class Router : NSObject, RouterProtocol {
 
 extension Router : UINavigationControllerDelegate {
 
-    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+    public func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
 
         guard let previousController = navigationController.transitionCoordinator?.viewController(forKey: .from),
             !navigationController.viewControllers.contains(previousController) else {
