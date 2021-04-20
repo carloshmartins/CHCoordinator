@@ -11,6 +11,10 @@ CHCoordinator is designed to be used with any iOS Projects based on Coordinator 
 
 The Swift Package Manager is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
 
+## How to implement
+
+https://github.com/carloshmartins/CHCoordinator/wiki/How-To-Implement-with-CHCoordinator
+
 ## Why is it called CHCoordinator?
 Carlos Henrique's Coordinator
 
