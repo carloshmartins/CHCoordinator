@@ -1,6 +1,6 @@
 import UIKit
 
-open protocol Drawable {
+public protocol Drawable {
     var viewController: UIViewController? { get }
 }
 

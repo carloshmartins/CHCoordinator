@@ -10,7 +10,7 @@ public protocol RouterProtocol: class {
 
 public class Router : NSObject, RouterProtocol {
 
-    let navigationController: UINavigationController
+    public let navigationController: UINavigationController
     private var closures: [String: NavigationBackClosure] = [:]
 
     public init(navigationController: UINavigationController) {
